@@ -67,6 +67,17 @@ class App extends Component {
     })
   }
 
+  nameChnagedHandler = (event) => {
+    console.log('fghnameChnagedHandlerjkl');
+    this.setState({
+      persons: [
+        {name: 'suman', age: 56},
+        {name: event.target.value, age: 56},
+        {name: 'Amit', age: 56}
+      ]
+    })
+  }
+
   render(){
     return (
       <div className="App">
@@ -78,14 +89,15 @@ class App extends Component {
           age={this.state.persons[0].age} 
         />
         <Person 
-          name={this.state.persons[1].name} 
-          age={this.state.persons[1].age}
-        />
-        <Person 
           name={this.state.persons[2].name} 
           age={this.state.persons[2].age}
-          click={() => this.switchNameHandler('Max')}>My Hobbies: Racing
-        </Person>
+          click={() => this.switchNameHandler('Max')}
+        >My Hobbies: Racing</Person>
+        <Person 
+          name={this.state.persons[1].name} 
+          age={this.state.persons[1].age}
+          changed={this.nameChnagedHandler}
+        />
       </div>
     );
   }
