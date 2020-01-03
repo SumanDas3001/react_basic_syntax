@@ -11,7 +11,7 @@ import './App.css';
 //       {name: 'arun', age: 24}
 //     ]
 //   });
-  
+
 //   console.log(personState);
 
 //   const switchNameHandler = () => {
@@ -28,13 +28,13 @@ import './App.css';
 //     <div className="App">
 //       <h1>Hey, I'm React App</h1>
 //       <p>This is really working.</p>
-//       <button onClick={switchNameHandler}>Switch Name</button> 
-//       <Person 
-//         name={personState.persons[0].name} 
-//         age={personState.persons[0].age} 
+//       <button onClick={switchNameHandler}>Switch Name</button>
+//       <Person
+//         name={personState.persons[0].name}
+//         age={personState.persons[0].age}
 //       />
-//       <Person 
-//         name={personState.persons[1].name} 
+//       <Person
+//         name={personState.persons[1].name}
 //         age={personState.persons[1].age}
 //       />
 //       <Person name={personState.persons[2].name} age={personState.persons[2].age}>
@@ -79,22 +79,32 @@ class App extends Component {
   }
 
   render(){
+    const btnStyle = {
+      border: '1px solid blue',
+      backgroundColor: 'white',
+      padding: '5px',
+      font: 'inherit',
+      cursor: 'pointer'
+    }
     return (
       <div className="App">
         <h1>Hey, I'm React App</h1>
         <p>This is really working.</p>
-        <button onClick={this.switchNameHandler.bind(this, 'Maximilian')}>Switch Name</button> 
-        <Person 
-          name={this.state.persons[0].name} 
-          age={this.state.persons[0].age} 
+        <button
+          style={btnStyle}
+          onClick={this.switchNameHandler.bind(this, 'Maximilian')}
+          >Switch Name</button>
+        <Person
+          name={this.state.persons[0].name}
+          age={this.state.persons[0].age}
         />
-        <Person 
-          name={this.state.persons[2].name} 
+        <Person
+          name={this.state.persons[2].name}
           age={this.state.persons[2].age}
           click={() => this.switchNameHandler('Max')}
         >My Hobbies: Racing</Person>
-        <Person 
-          name={this.state.persons[1].name} 
+        <Person
+          name={this.state.persons[1].name}
           age={this.state.persons[1].age}
           changed={this.nameChnagedHandler}
         />
