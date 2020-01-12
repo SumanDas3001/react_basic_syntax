@@ -1,7 +1,7 @@
 import React from 'react';
 import Person from './Person/Person';
 import './App.css';
-import Radium from 'radium';
+import Radium, {StyleRoot} from 'radium';
 
 
 class App extends React.Component {
@@ -92,14 +92,16 @@ class App extends React.Component {
 
 
     return (
-      <div className="App">
-        <h1>Hey, I'm React App</h1>
-        <p className={dynmClass.join(' ')}>This is really working.</p>
-        <button
-          style={btnStyle}
-          onClick={this.togglePersonHandler}>Switch Name</button>
-        {person}
-      </div>
+      <StyleRoot>
+        <div className="App">
+          <h1>Hey, I'm React App</h1>
+          <p className={dynmClass.join(' ')}>This is really working.</p>
+          <button
+            style={btnStyle}
+            onClick={this.togglePersonHandler}>Switch Name</button>
+          {person}
+        </div>
+      </StyleRoot>
     );
   }
 }
